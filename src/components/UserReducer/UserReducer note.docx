@@ -1,0 +1,104 @@
+What's usereducer, it's a react hook that allows you to manage the state of components, basically an alternative to usestate.Since they both create a new state and update it
+But the difference lies in the way to update states
+
+IN USESTATE,
+  We use setState functions to update the state variable i.e
+const [loading, setLoading] = useState('')
+
+But in useReducer, it's a little bit much complicated but makes the code much easier
+
+GBT EXPLANATION
+Alright! Let’s explain`useReducer` in a simple way, like I’m talking to a six - year - old.
+
+### Imagine a Toy Robot
+
+Let’s pretend you have a ** toy robot **.This robot can:
+- Move forward
+  - Turn left
+    - Turn right
+      - Stop
+
+Now, you have a ** remote control ** that gives the robot instructions.But instead of pressing buttons directly, you have a ** list of commands ** that the robot follows. 
+
+### What is`useReducer` ?
+
+  In the world of programming(and React), `useReducer` is like ** that remote control **.You give it a list of instructions(commands) to manage how things change.
+
+    Let’s break it down step by step:
+
+### 1. ** The Robot’s Current Position **
+  The robot has a ** state **.Think of the ** state ** as where the robot is right now, like:
+- Is the robot moving forward ?
+  - Is it stopped ?
+
+### 2. ** Instructions for the Robot(Actions) **
+  Then, you have ** actions **.These are the ** commands ** you send to the robot, like:
+- "Move forward!"
+  - "Turn left!"
+  - "Stop!"
+
+Each time you send an action(a command), the robot’s state changes.If the robot is stopped and you say "Move forward!", it will move forward.
+
+### 3. ** The`useReducer` Setup **
+  In`useReducer`, you tell it:
+- ** What the robot’s state is ** right now.
+- ** What actions ** can be sent(the list of commands).
+- ** How the state should change ** when an action happens.
+
+  Here’s how this works in code(don’t worry, I’ll explain below):
+
+```tsx
+const [robotState, dispatch] = useReducer(robotReducer, { moving: false });
+```
+
+  - ** `robotState` **: This is where your robot is right now.For example, `{ moving: false }` means the robot is stopped.
+- ** `dispatch` **: This is like pressing a button on the remote control.It sends a command to the robot.
+- ** `robotReducer` **: This is a list of all the commands the robot can follow and how it should react.
+
+### Example Commands(Actions):
+Let’s say the robot can:
+- ** MOVE ** (move forward)
+- ** STOP ** (stop moving)
+
+### What Happens Inside `useReducer`:
+
+```tsx
+function robotReducer(state, action) {
+  switch(action.type) {
+    case 'MOVE':
+      return { moving: true };
+    case 'STOP':
+      return { moving: false };
+    default:
+      return state;
+  }
+}
+```
+
+  - ** If the command is ‘MOVE’**, the robot’s state changes to`{ moving: true }`.
+- ** If the command is ‘STOP’**, the robot’s state changes to`{ moving: false }`.
+
+### How You Send Commands(Actions):
+To tell the robot to move or stop, you send commands like this:
+
+```tsx
+<button onClick={() => dispatch({ type: 'MOVE' })}>Move</button>
+<button onClick={() => dispatch({ type: 'STOP' })}>Stop</button>
+```
+
+  - When you click "Move," the robot gets the command and starts moving.
+- When you click "Stop," the robot gets the command and stops.
+
+### Summary:
+- ** State **: Where the robot is right now(moving or stopped).
+- ** Actions **: Commands you send(like "MOVE" or "STOP").
+- ** useReducer **: The remote control that lets you manage these commands and update the robot’s state.
+
+Does that make sense ? Just think of `useReducer` like a way to control something with a list of instructions!
+
+
+WHEN TO USE USESTATE AND WHEN TO USE USEREDUCER
+E.g 1 : When you want to update multiple states in a single function
+//CHECk THE CODE PAGE POST FOLDER AND USEREDUCER components
+From the code we see that we have loading post and error states
+Basically when we click on the button it'll try to fetch a post from an api and update the states during that process

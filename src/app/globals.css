@@ -18,10 +18,23 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.postCard h1{
+  font-weight: bolder;
+}
+
+.postCard{
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+
+
 }

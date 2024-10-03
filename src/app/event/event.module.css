@@ -1,0 +1,28 @@
+.content{
+    margin: 2rem;
+}
+
+.search{
+    display: flex;
+    gap: 1rem;
+}
+
+.search button{
+    background: purple;
+    border-radius: 4rem;
+    padding: .5rem .8rem;
+}
+
+.search input{
+    color: black;
+    width: 20rem;
+    font-size: medium;
+}
+
+.post button{
+    background: red;
+    color: white;
+    font-size: 12px;
+    border-radius: .2rem;
+    padding: .5rem;
+}

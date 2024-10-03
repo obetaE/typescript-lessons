@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+
+}
+
+.content form{
+
+    position: absolute;
+    top: 18rem;
+    left: 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.content form input{
+    padding: .5rem;
+}
+
+.content form button{
+    background: purple;
+    padding: .5rem;
+}
