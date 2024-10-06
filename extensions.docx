@@ -1,0 +1,26 @@
+QUOKKA.JS EXTENSION
+It allows you to do simgle type prototying and testing on your code
+After installation, you can type ctrl+shift+p or f1 button and type quokka 
+You'd see different files you can easily create immediately and when you create a file it'll show you all the possible errors of your code
+
+MATERIAL THEME:
+>theme
+
+SNIPPET MAKER
+>create snippet
+
+PEACOCK 
+>peacock
+
+CODESNAP 
+>codesnap
+Highlight what you wish to snap
+then snap it
+
+REST CLIENT
+Used for api testing
+Give a file any name of your choice but the extension name should be .http
+Put your api end point then click on send request and you should get the results
+
+TODO Hightlight 
+Start your commented notes with either TODO: or FIXME: and as you can see it highlights them all
